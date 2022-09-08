@@ -9,6 +9,7 @@ int main()
 	
 	cout << "Enter the number: ";
 	cin >> n;
+	
 	n2 = n;
 	while(n2 !=0 ) {
 		r = n2 % 10;
