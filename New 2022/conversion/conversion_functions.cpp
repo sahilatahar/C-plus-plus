@@ -4,7 +4,13 @@
 using namespace std;
 
 string reverse(string);
-string decimalToBinary(int);
+string decimalToBinary(int decimalNo);
+string octalToBinary(int octalNo);
+string hexaDecimalToBinary(int hexaDecimalNo);
+int hexaDecimalToDecimal(int hexaDecimalNo);
+int binaryToDecimal(string binaryNo);
+int octalToDecimal(int octalNo);
+int binaryToOctal(string binary);
 
 string decimalToBinary(int decimalNo)
 {
@@ -27,6 +33,45 @@ string octalToBinary(int octalNo)
     return decimalToBinary(octalToDecimal(octalNo));
 }
 
+string hexaDecimalToBinary(int hexaDecimalNo)
+{
+    return decimalToBinary(hexaDecimalToDecimal(hexaDecimalNo));
+}
+
+int hexaDecimalToDecimal(int hexaDecimalNo)
+{
+    int power = 0, decimalNo = 0;
+
+    while (true)
+    {
+        if (hexaDecimalNo == 0 || hexaDecimalNo == 1)
+        {
+            break;
+        }
+        decimalNo += (hexaDecimalNo % 10) * pow(16, power);
+        power++;
+        hexaDecimalNo = hexaDecimalNo / 10;
+    }
+    return decimalNo;
+}
+
+int binaryToDecimal(string binaryNo)
+{
+    int power = 0, decimalNo = 0;
+
+    while (true)
+    {
+        if (binaryNo.length() == 0)
+        {
+            break;
+        }
+        decimalNo += (stoi(binaryNo.substr(binaryNo.size() - 1)) % 10) * pow(2, power);
+        power++;
+        binaryNo = binaryNo.substr(0, binaryNo.size() - 1);
+    }
+    return decimalNo;
+}
+
 int octalToDecimal(int octalNo)
 {
     int power = 0, decimalNo = 0;
@@ -39,9 +84,8 @@ int octalToDecimal(int octalNo)
         }
         decimalNo += (octalNo % 10) * pow(8, power);
         power++;
-        octalNo = octalNo / 8;
+        octalNo = octalNo / 10;
     }
-    cout << decimalNo;
     return decimalNo;
 }
 
