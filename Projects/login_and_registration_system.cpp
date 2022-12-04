@@ -18,18 +18,19 @@ class User
 public:
     void login()
     {
+        reset();
         cout << "Please, Enter you usename: ";
         cin >> username;
-        getchar();
-    inputPasswordAgain:
-        cout << "Please, Enter you password: ";
-        cin >> password;
+        fflush(stdin);
         if (getUserFile())
         {
+        inputPasswordAgain:
+            cout << "Please, Enter you password: ";
+            cin >> password;
             if (password == filePassword)
             {
                 cout << "\033[32;40m";
-                cout << "Login Successfully";
+                cout << "Login Successfully" << endl;
                 cout << "\033[0m";
             }
             else
@@ -50,18 +51,27 @@ public:
     }
     void registration()
     {
+        reset();
         cout << "Please, Enter you usename: ";
         cin >> username;
+        fflush(stdin);
         cout << "Please, Enter you password: ";
         cin >> password;
+
         createUser();
         cout << "\033[32;40m";
-        cout << "Registration Successful";
+        cout << "Registration Successful" << endl;
         cout << "\033[0m";
+        cout << "username : " + username + "\t password : " + password << endl;
         main();
     }
 
 private:
+    void reset()
+    {
+        username.clear();
+        password.clear();
+    }
     void createUser()
     {
         ofstream userFile(username + ".txt");
@@ -88,8 +98,7 @@ private:
 };
 
 int main()
-{
-
+{   
     User user;
     int input;
     cout << "Choose an option:" << endl;
