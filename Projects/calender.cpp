@@ -156,9 +156,9 @@ Day getCurrentDay(Date currentDate)
         totalDays += getDaysInMonth(month, currentDate.year);
     }
 
-    int dayNo = totalDays % 7; // -6 to set sunday at 0 index
+    int dayNo = totalDays % 7;
 
-    enum Day day = Sunday;
+    Day day = Sunday;
     switch (dayNo)
     {
     case 0:
