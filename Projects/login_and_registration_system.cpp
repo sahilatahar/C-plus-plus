@@ -98,7 +98,7 @@ private:
 };
 
 int main()
-{   
+{
     User user;
     int input;
     cout << "Choose an option:" << endl;
