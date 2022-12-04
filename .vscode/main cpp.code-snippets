@@ -1,15 +1,18 @@
 {
-	"C++ boilerplate code": {
-  "prefix": "main cpp",
-  "body": [
-    "#include<iostream> ",
-    "using namespace std;",
-    "",
-    "int main() {",
-    "",
-    "    return 0;",
-    "}"
-  ],
-  "description": "C++ boilerplate code"
-}
+  "C++ boilerplate code": {
+    "prefix": "my cpp main",
+    "body": [
+      "#include<iostream>",
+      "#include<conio.h>",
+      "",
+      "using namespace std;",
+      "",
+      "int main() {",
+      "",
+      "    getch();",
+      "    return 0;",
+      "}"
+    ],
+    "description": "C++ boilerplate code"
+  }
 }
