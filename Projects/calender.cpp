@@ -48,11 +48,29 @@ int main()
 {
     Date date;
     cout << "Enter the day: ";
+takeDayAgain:
     cin >> date.day;
+    if (date.day > 31 || date.day < 1)
+    {
+        cout << "Please, Enter correct day: ";
+        goto takeDayAgain;
+    }
     cout << "Enter the month:";
+takeMonthAgain:
     cin >> date.month;
+    if (date.month > 12 || date.month < 1)
+    {
+        cout << "Please, Enter correct month: ";
+        goto takeMonthAgain;
+    }
     cout << "Enter the year:";
+takeYearAgain:
     cin >> date.year;
+    if (date.year > 2050 || date.year < 1981)
+    {
+        cout << "Please, Enter correct year between 1981-2050: ";
+        goto takeYearAgain;
+    }
     displayCalender(date);
     getch();
     return 0;
