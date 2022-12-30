@@ -1,4 +1,4 @@
-// Program to print the calender of the month after 1980
+// Program to print the Calendar of the month after 1980
 
 #include <iostream>
 #include <conio.h>
@@ -41,7 +41,7 @@ enum Day
 };
 
 Day getCurrentDay(Date);
-void displayCalender(Date);
+void displayCalendar(Date);
 int getDayNo(Day);
 
 int main()
@@ -71,12 +71,12 @@ takeYearAgain:
         cout << "Please, Enter correct year between 1981-2050: ";
         goto takeYearAgain;
     }
-    displayCalender(date);
+    displayCalendar(date);
     getch();
     return 0;
 }
 
-void displayCalender(Date currentDate)
+void displayCalendar(Date currentDate)
 {
     Day day = getCurrentDay(currentDate);
 
